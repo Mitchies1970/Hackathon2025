@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hackathon2025.BuisinessLogic\Hackathon2025.BuisinessLogic.csproj" />
+    <ProjectReference Include="..\Hackathon2025.DTOs\Hackathon2025.DTOs.csproj" />
+  </ItemGroup>
+
+</Project>

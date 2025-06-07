@@ -1,0 +1,64 @@
+﻿@model Hackathon2025.UI.Models.SearchModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to AI product Search</h1>
+    <p>What kind of product are you searching for. Just write in plain English what you are looking for. </p>
+
+    <form asp-action="Search" method="post">
+        @if (Model.IsError)
+        {
+            <div class="text-danger">@Model.ErrorMessage</div>
+        }
+        <div class="row">
+            <div class="form-group">
+                <div><label class="control-label"><strong>Enter your search Text in plain English</strong></label></div>
+
+                <div><input asp-for="SearchText" class="form-control" /></div>
+
+                <div><span asp-validation-for="SearchText" class="text-danger"></span></div>
+
+            </div>
+        </div>
+        <div>&nbsp;</div>
+
+        <div class="form-group">
+            <input type="submit" value="Search for products" class="btn btn-primary" />
+        </div>
+    </form>
+
+    @if (Model.ProductsFound.Any())
+    {
+        <div class="container mt-4">
+            <h2>Product List</h2>
+            <table class="table table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model.ProductsFound)
+                    {
+                        <tr>
+                            <td>@product.Id</td>
+                            <td>@product.Name</td>
+                            <td>@product.Description</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</div>

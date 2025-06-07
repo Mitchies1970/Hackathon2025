@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hackathon2025.AiService\Hackathon2025.AiService.csproj" />
+    <ProjectReference Include="..\Hackathon2025.DbRepo\Hackathon2025.DbRepo.csproj" />
+    <ProjectReference Include="..\Hackathon2025.DTOs\Hackathon2025.DTOs.csproj" />
+  </ItemGroup>
+
+</Project>
